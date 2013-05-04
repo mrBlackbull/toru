@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  layout "group", :except => [:index]
   # GET /groups
   # GET /groups.json
   def index

@@ -1,26 +1,6 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Group -%>
 
-<p>
-	<b> Group Name </b>
-	<%= @group.group_name %>
+<p> 
+<h1> Posts should come here! </h1>
 </p>
 
-<p>
-	<b> Affiliation </b>
-	<%= @group.affiliation %>
-</p>
-
-<p>
-	<b> Group Type </b>
-	<%= @group.group_type %>
-</p>
-
-<p>
-	<b> Posts </b>
-	<%=  @group.posts %>
-<br />
-
-
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
