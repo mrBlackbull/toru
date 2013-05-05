@@ -36,54 +36,16 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Toru</a>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Base", "/path1"  %></li>
-              <li><%= link_to "Groups", "/groups"  %></li>
-              <li><%= link_to "Help", "/path3"  %></li>
-              <li><%= link_to "Me", "/path3"  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+   
 
-    <div id="user_nav">
-    <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. This cannot be cheese?
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
-    <% end %>
-</div>
-
-        <div class="page-header">
-    <h1><%= @group.group_name %><br/> <small><%= @group.group_type %> | %Group_admin</small></h1>
+        <div class="page-header span12">
+    <h1>Toru <small><a href="#" class="offset8">Login</a></small></h1>
     </div>
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Discussions", @groups %></li>
-              <li><%= link_to "Calendar", "/path2"  %></li>
-              <li><%= link_to "People", "/path3"  %></li>
-               <li><%= link_to "Library", "/path3"  %></li>
-                <li><%= link_to "Info", "/path3"  %></li>
-                 <li><%= link_to "Settings", edit_group_path(@group) %></li>
-            </ul>
-          </div><!--/.well -->
+        <div class="span2">
+         
         </div><!--/span-->
         <div class="span9">
           <%= bootstrap_flash %>

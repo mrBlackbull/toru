@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   layout "group", :except => [:index]
+  before_filter :authenticate_user!
   # GET /groups
   # GET /groups.json
   def index
@@ -15,7 +16,7 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-    post = @group.posts.build
+    
 
     respond_to do |format|
       format.html # show.html.erb
