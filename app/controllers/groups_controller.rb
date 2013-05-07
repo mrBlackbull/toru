@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-    
+    @post = @group.posts.build    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,6 +38,7 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
     @group = Group.find(params[:id])
+
   end
 
   # POST /groups
@@ -59,8 +60,7 @@ class GroupsController < ApplicationController
   # PUT /groups/1
   # PUT /groups/1.json
   def update
-    @group = Group.find(params[:id])
-
+    @group = Group.find(params[:id])     
     respond_to do |format|
       if @group.update_attributes(params[:group])
         format.html { redirect_to @group, notice: 'Group was successfully updated.' }

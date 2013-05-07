@@ -57,9 +57,9 @@
       </div>
     </div>
 
-    <div id="user_nav">
+    <div id="user_nav" class="pull-right">
     <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. This cannot be cheese?
+        Signed in as <%= current_user.email %>. 
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
     <% else %>
         <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
@@ -76,7 +76,7 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Discussions", @groups %></li>
+              <li><%= link_to "Discussions", @group %></li>
               <li><%= link_to "Calendar", "/path2"  %></li>
               <li><%= link_to "People", "/path3"  %></li>
                <li><%= link_to "Library", "/path3"  %></li>
