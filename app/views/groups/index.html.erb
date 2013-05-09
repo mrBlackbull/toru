@@ -20,7 +20,7 @@
         <td><%= group.group_name %></td>
         <td><%= group.group_type %></td>
         <td><%= group.affiliation %></td>
-        <td><%=l group.created_at %></td>
+        <td><%= distance_of_time_in_words_to_now(group.created_at) %> ago</td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_group_path(group), :class => 'btn btn-mini' %>

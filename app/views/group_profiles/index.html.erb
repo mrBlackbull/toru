@@ -1,0 +1,21 @@
+<h1>Listing group_profiles</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @group_profiles.each do |group_profile| %>
+  <tr>
+    <td><%= link_to 'Show', group_profile %></td>
+    <td><%= link_to 'Edit', edit_group_profile_path(group_profile) %></td>
+    <td><%= link_to 'Destroy', group_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Group profile', new_group_profile_path %>

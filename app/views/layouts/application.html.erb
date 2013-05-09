@@ -58,7 +58,7 @@
     </div>
 
         <div class="page-header span9">
-    <h1>Hello, %username! <small><a href="#">View and edit your profile</a></small></h1>
+    <h1>Hello, <%= current_user.name %> <small><a href="/users/edit">View and edit your profile</a></small></h1>
     </div>
 
     <div class="container-fluid">

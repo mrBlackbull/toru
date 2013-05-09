@@ -1,6 +1,8 @@
 Toru::Application.routes.draw do
   
+
   resources :groups do
+    resources :group_profiles
     resources :posts do
       resources :comments
     end

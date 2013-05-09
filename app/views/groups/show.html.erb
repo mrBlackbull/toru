@@ -4,23 +4,22 @@
 <h1> Posts should come here! </h1>
 </p>
 
-
-<div class = "form">
+<form>
+<div>
 <%= form_for @group do |f| %>
-<%= f.fields_for @group.posts.first do |builder| %>
+<%= f.fields_for :posts do |builder| %>
     <%= render "posts/form", :f => builder %>
   <% end %>
 <% end %> 
 </div>
-
+</form>
 
 <% @group.posts.each do |post| %>
-	<%= post.body %>
-	</br>
+  <tr>
+  	<div>
+    <td><%= post.body %></td>
+	</div>
+  </tr>
 <% end %>
 
 
-<% for post in @group.posts %>
-	<%= post.body %>
-	</br>	    
-<% end %>

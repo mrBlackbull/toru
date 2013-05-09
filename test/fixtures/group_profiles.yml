@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  group_mission: MyString
+  : MyText
+  text_block_body: MyString
+  : MyString
+  text_block_content: MyString
+  : MyText
+  group: 
+
+two:
+  group_mission: MyString
+  : MyText
+  text_block_body: MyString
+  : MyString
+  text_block_content: MyString
+  : MyText
+  group: 

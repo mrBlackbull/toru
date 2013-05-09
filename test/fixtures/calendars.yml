@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: MyString
+  : 2013-05-09
+  starts_at: MyString
+  : 2013-05-09 23:01:02
+  ends_at: MyString
+  : 2013-05-09 23:01:02
+  location: MyString
+  : MyString
+  room_number: MyString
+  : MyString
+  info: MyString
+  : MyText
+  group: 
+
+two:
+  date: MyString
+  : 2013-05-09
+  starts_at: MyString
+  : 2013-05-09 23:01:02
+  ends_at: MyString
+  : 2013-05-09 23:01:02
+  location: MyString
+  : MyString
+  room_number: MyString
+  : MyString
+  info: MyString
+  : MyText
+  group: 
