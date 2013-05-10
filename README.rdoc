@@ -1,9 +1,45 @@
 Project for my diploma thesis. Doing lore.com/groups on Ruby on Rails.
 
+Critical functions that are not working yet: 
+
+1) Groups' post walls with comments. (model Group + Posts + Comments + User). User can make posts on the wall, comment posts and delete / edit posts if owner.
+
+2) Calendar model not configured yet. Calendar model is for creating events and showing them in a list. 
+
 Things to be done:
 
-1) Tie existing models to User model (Devise). 
+1) Tie existing models to User model (Devise). Make neccessary changes to controllers, and view forms.
 
+------------------------------------------------------------------------------------------------------------
+
+2) Dropdown select with predefined parameters for Group model (needs to be changed in forms, couldn't predefine attributes)
+
+attribute: Group_Type
+possible arguments: General Group | Group Project | Common Interest | Academic Group | Study Grop
+
+------------------------------------------------------------------------------------------------------------
+
+3) Dropdown select with predefined parameters for Group model (needs to be changed in forms, couldn't predefine it)
+
+attribute: Group_Type
+possible arguments: General Group | Group Project | Common Interest | Academic Group | Study Grop
+
+------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+
+2) Dropdown select with predefined parameters for Group model (needs to be changed in forms, couldn't predefine it)
+
+attribute: Group_Type
+possible arguments: General Group | Group Project | Common Interest | Academic Group | Study Grop
+
+------------------------------------------------------------------------------------------------------------
+
+3) Routes - think about possible ways of routing users from main page to registration page in the following scenario:
+
+User goes through group creation process and at the end if he's not signed in we ask him to sign in or to register. After he's done signing in or registering continue the flow of group creation -> redirect to main page of newly created group.
+
+------------------------------------------------------------------------------------------------------------
 
 Secondary functions:
 
