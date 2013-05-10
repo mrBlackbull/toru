@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  layout "group", :except => [:index]
+  layout "group" , :except => [:index, :new]
   before_filter :authenticate_user!
   # GET /groups
   # GET /groups.json
