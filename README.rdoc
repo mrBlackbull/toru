@@ -6,6 +6,8 @@ Critical functions that are not working yet:
 
 2) Calendar model not configured yet. Calendar model is for creating events and showing them in a list. 
 
+3) Layout for devise/user for :edit action we need application layout
+
 Things to be done:
 
 1) Tie existing models to User model (Devise). Make neccessary changes to controllers, and view forms.
