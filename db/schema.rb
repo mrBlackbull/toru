@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509170102) do
+ActiveRecord::Schema.define(:version => 20130511052358) do
 
   create_table "calendars", :force => true do |t|
-    t.string   "date"
-    t.string   "starts_at"
-    t.string   "ends_at"
+    t.date     "date"
+    t.time     "starts_at"
+    t.time     "ends_at"
     t.string   "location"
     t.string   "room_number"
-    t.string   "info"
+    t.text     "info"
     t.integer  "group_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
