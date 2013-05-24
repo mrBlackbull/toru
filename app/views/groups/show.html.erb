@@ -5,21 +5,11 @@
 </p>
 
 <form>
-<div>
-<%= form_for @group do |f| %>
-<%= f.fields_for :posts do |builder| %>
-    <%= render "posts/form", :f => builder %>
-  <% end %>
-<% end %> 
-</div>
-</form>
+<div >
+<%= render "posts/form" %>
 
-<% @group.posts.each do |post| %>
-  <tr>
-  	<div>
-    <td><%= post.body %></td>
-	</div>
-  </tr>
-<% end %>
+<%= render @group.posts %>
+
+
 
 

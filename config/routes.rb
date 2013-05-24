@@ -2,9 +2,8 @@ Toru::Application.routes.draw do
   
 
   resources :groups do
-    resources :posts do
-      resources :comments
-    end
+    match "profile" => "group_profiles"
+    resources :posts
   end
   
   

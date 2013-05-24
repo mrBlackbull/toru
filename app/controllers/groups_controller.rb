@@ -1,6 +1,19 @@
 class GroupsController < ApplicationController
   layout "group" , :except => [:index, :new]
   before_filter :authenticate_user!
+  #Joining group
+  def join
+    @group = Group.find(params[:id])
+    respond_to do |format|
+      if @m.save
+        format.html { redirect_to(@group, :notice => 'You have joined this group.') }
+        format.xml  { head :ok }
+      else
+        format.html { redirect_to(@group, :notice => 'Join error.') }
+        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
   # GET /groups
   # GET /groups.json
   def index
@@ -16,7 +29,6 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-    @post = @group.posts.build    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +40,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.json
   def new
     @group = Group.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @group }
@@ -45,7 +57,6 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(params[:group])
-
     respond_to do |format|
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }

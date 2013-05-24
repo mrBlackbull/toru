@@ -34,10 +34,10 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
-  <body>
+  <body class="container">
 
     <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
+      <div class="navbar-inner navbar-inner2">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
@@ -46,33 +46,45 @@
           </a>
           <a class="brand" href="#">Toru</a>
           <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Base", "/path1"  %></li>
+            <ul class="nav pull-right">
               <li><%= link_to "Groups", groups_path  %></li>
               <li><%= link_to "Help", "/path3"  %></li>
-              <li><%= link_to "Me", "/path3"  %></li>
+              <ul class="nav">
+                <li class="dropdown">
+                  <a href="#"  
+                    class="dropdown-toggle"  
+                    data-toggle="dropdown">  
+                    Me  
+                    <b class="caret"></b>  
+                  </a> 
+                  <ul class="dropdown-menu">
+                    <li><%= link_to ' Settings ', edit_user_registration_path %> </a></li>
+                    <li> <%= link_to 'Sign out', destroy_user_session_path, method: :delete %></a></li>
+                  </ul>
+                </li>
+              </ul>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div id="user_nav" class="pull-right">
-    <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. 
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
-    <% end %>
-</div>
+    <div id="user_nav" class="pull-right" style="display:none">
+        <% if user_signed_in? %>
+            Signed in as <%= current_user.email %>. 
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+        <% end %>
+    </div>
 
-        <div class="page-header">
-    <h1><%= @group.group_name %><br/> <small><%= @group.group_type %> | %Group_admin</small></h1>
+    <div class="page-header">
+      <h1><%= @group.group_name %><br/> <small><%= @group.group_type %> | %Group_admin</small></h1>
     </div>
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+        <div class="span2">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
@@ -80,16 +92,27 @@
               <li><%= link_to "Calendar", "/path2"  %></li>
               <li><%= link_to "People", "/path3"  %></li>
                <li><%= link_to "Library", "/path3"  %></li>
-                <li><%= link_to "Info", "/path3"  %></li>
+                <li><%= link_to "Info", group_profile_path(@group)  %></li>
                  <li><%= link_to "Settings", edit_group_path(@group) %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span9">
+        <div class="span8">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
       </div><!--/row-->
+        
+        <div class="span2">
+          <legend> Upcoming Events </legend>
+          <p class="lead" style="border-bottom: 1px solid black"> list of upcoming events from calendar </p> 
+
+          <a href="#"> View group calendar </a>
+        </div>
+      </div><!--/row-->
+
+
+
 
       <footer>
         <p>&copy; Company 2013</p>

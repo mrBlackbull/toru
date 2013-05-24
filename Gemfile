@@ -9,8 +9,8 @@ gem 'pg'
 gem 'passenger'
 gem 'devise'
 gem 'cancan'
-
-
+gem 'simple_form'
+gem 'cocoon'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,9 +1,10 @@
 
-
-   <div class="congrol-group">
-   <%= f.text_area :body, :size => "60x5" %>
+<%= form_for([@group, @group.posts.build]) do |f| %>
+    <div class="controls">
+      <%= f.text_field :body, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit "Post" %>
 
-
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <% end %>
