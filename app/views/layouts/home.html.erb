@@ -37,10 +37,10 @@
   <body>
 
    
-
-        <div class="page-header span12">
-          <h1> Toru </h1>
-    <h4><span class="pull-right"><%= link_to 'Login', new_user_session_path %></span></h4>
+  <div class="header-wrapper">
+    <div>
+      <h2> Toru </h2>
+      <h4><span class="pull-right"><%= link_to 'Login', new_user_session_path %></span></h4>
     </div>
 
     <div class="container-fluid">
@@ -53,12 +53,16 @@
           <%= yield %>
         </div>
       </div><!--/row-->
+    </div><!--/container-->
+  </div> <!--/header-wrapper-->
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
+  <footer class="navbar navbar-fixed-bottom">
+    <p>&copy; Company 2013</p>
+  </footer>
 
-    </div> <!-- /container -->
+
+
+    <!-- /container -->
 
     <!-- Javascripts
     ================================================== -->
