@@ -92,7 +92,7 @@
               <li><%= link_to "Calendar", "/path2"  %></li>
               <li><%= link_to "People", "/path3"  %></li>
                <li><%= link_to "Library", "/path3"  %></li>
-                <li><%= link_to "Info", group_group_profile_path(@group, @group.group_profile)  %></li>
+                <li><%= link_to "Info", group_profile_path(@group, @group.profile)  %></li>
                  <li><%= link_to "Settings", edit_group_path(@group) %></li>
             </ul>
           </div><!--/.well -->
@@ -100,16 +100,15 @@
         <div class="span8">
           <%= bootstrap_flash %>
           <%= yield %>
-        </div>
-      </div><!--/row-->
+        </div><!--/span-->
         
-        <div class="span2">
-          <legend> Upcoming Events </legend>
-          <p class="lead" style="border-bottom: 1px solid black"> list of upcoming events from calendar </p> 
+        <% if content_for?(:calendar) %>
+          <div><%= yield(:calendar) %></div>
+        <% end %>     
 
-          <a href="#"> View group calendar </a>
-        </div>
-      </div><!--/row-->
+
+        </div><!--/row-->
+      </div><!--/container-->
 
 
 
@@ -118,7 +117,6 @@
         <p>&copy; Company 2013</p>
       </footer>
 
-    </div> <!-- /container -->
 
     <!-- Javascripts
     ================================================== -->

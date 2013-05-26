@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class GroupProfilesControllerTest < ActionController::TestCase
+class ProfilesControllerTest < ActionController::TestCase
   setup do
-    @group_profile = group_profiles(:one)
+    @profile = profiles(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:group_profiles)
+    assert_not_nil assigns(:profiles)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class GroupProfilesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create group_profile" do
-    assert_difference('GroupProfile.count') do
-      post :create, group_profile: {  }
+  test "should create profile" do
+    assert_difference('Profile.count') do
+      post :create, profile: {  }
     end
 
-    assert_redirected_to group_profile_path(assigns(:group_profile))
+    assert_redirected_to profile_path(assigns(:profile))
   end
 
-  test "should show group_profile" do
-    get :show, id: @group_profile
+  test "should show profile" do
+    get :show, id: @profile
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @group_profile
+    get :edit, id: @profile
     assert_response :success
   end
 
-  test "should update group_profile" do
-    put :update, id: @group_profile, group_profile: {  }
-    assert_redirected_to group_profile_path(assigns(:group_profile))
+  test "should update profile" do
+    put :update, id: @profile, profile: {  }
+    assert_redirected_to profile_path(assigns(:profile))
   end
 
-  test "should destroy group_profile" do
-    assert_difference('GroupProfile.count', -1) do
-      delete :destroy, id: @group_profile
+  test "should destroy profile" do
+    assert_difference('Profile.count', -1) do
+      delete :destroy, id: @profile
     end
 
-    assert_redirected_to group_profiles_path
+    assert_redirected_to profiles_path
   end
 end

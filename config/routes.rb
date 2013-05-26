@@ -9,7 +9,7 @@ Toru::Application.routes.draw do
 
   resources :groups do
     # match "profile" => "group_profiles"
-    resources :group_profiles
+    resources :profiles
     resources :posts
   end
   

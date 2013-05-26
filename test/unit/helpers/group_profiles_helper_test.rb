@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class GroupProfilesHelperTest < ActionView::TestCase
+class ProfilesHelperTest < ActionView::TestCase
 end

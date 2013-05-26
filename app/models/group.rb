@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
   
   has_many :posts, :dependent => :destroy
 
-  has_one :group_profile, :dependent => :destroy
+  has_one :profile, :dependent => :destroy
 
 
   

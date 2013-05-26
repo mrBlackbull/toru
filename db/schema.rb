@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524063303) do
+ActiveRecord::Schema.define(:version => 20130526100300) do
 
   create_table "calendars", :force => true do |t|
     t.date     "date"
@@ -26,17 +26,6 @@ ActiveRecord::Schema.define(:version => 20130524063303) do
   end
 
   add_index "calendars", ["group_id"], :name => "index_calendars_on_group_id"
-
-  create_table "group_profiles", :force => true do |t|
-    t.string   "group_mission"
-    t.string   "text_block_body"
-    t.string   "text_block_content"
-    t.integer  "group_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-  add_index "group_profiles", ["group_id"], :name => "index_group_profiles_on_group_id"
 
   create_table "groups", :force => true do |t|
     t.string   "group_name"
@@ -58,6 +47,17 @@ ActiveRecord::Schema.define(:version => 20130524063303) do
   end
 
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
+
+  create_table "profiles", :force => true do |t|
+    t.string   "group_mission"
+    t.string   "text_block_body"
+    t.string   "text_block_content"
+    t.integer  "group_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "profiles", ["group_id"], :name => "index_profiles_on_group_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
