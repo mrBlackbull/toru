@@ -10,6 +10,7 @@
 	<% @group.posts.each do |post| %>
 		<div class="list item">
 				<%= post.body %>
+				<%= link_to 'Delete', group_post_path(@group.id, post.id), :confirm => "are you sure?", :method => :delete %>
 		</div>
 	<% end %>
 </div>
