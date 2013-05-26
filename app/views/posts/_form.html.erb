@@ -1,5 +1,5 @@
 
-<%= form_for(@post, :url => group_post_path(@post.group)) do |f| %>
+<%= form_for([@group, @post]) do |f| %>
     <div class="controls">
       <%= f.text_field :body, :class => 'text_field' %>
     </div>
