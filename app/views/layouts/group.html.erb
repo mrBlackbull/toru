@@ -92,7 +92,7 @@
               <li><%= link_to "Calendar", "/path2"  %></li>
               <li><%= link_to "People", "/path3"  %></li>
                <li><%= link_to "Library", "/path3"  %></li>
-                <li><%= link_to "Info", group_profile_path(@group)  %></li>
+                <li><%= link_to "Info", group_group_profile_path(@group, @group.group_profile)  %></li>
                  <li><%= link_to "Settings", edit_group_path(@group) %></li>
             </ul>
           </div><!--/.well -->

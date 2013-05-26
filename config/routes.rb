@@ -1,14 +1,15 @@
 Toru::Application.routes.draw do
-  # get "home/index"
+  get "home/index"
 
-  # devise_for :users
+  devise_for :users
 
-  # root :to => "home#index"
+  root :to => "home#index"
 
 
 
   resources :groups do
-    match "profile" => "group_profiles"
+    # match "profile" => "group_profiles"
+    resources :group_profiles
     resources :posts
   end
   
