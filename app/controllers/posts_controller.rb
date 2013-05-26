@@ -80,11 +80,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post = @group.posts.find(params[:post])
-    @post.destroy
-
+    group = Group.find(params[:group_id])
+    post_to_delete = group.posts.find{|g| g.id == params[:id].to_i }
+    post_to_delete.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to group_path(@group) }
       format.json { head :no_content }
     end
   end
