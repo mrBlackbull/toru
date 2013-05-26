@@ -1,14 +1,14 @@
-<%- model_class = Group -%>
-
 <p> 
-<h1> Posts should come here! </h1>
+	<h1> Posts should come here! </h1>
 </p>
 
-<form>
 <div >
-<%= render "posts/form" %>
-
-<%= render @group.posts %>
+	<%= render "posts/form" %>
+</div>
+	
+<div id="listing">
+	<%= render @group.posts %>
+<div>
 
 
 

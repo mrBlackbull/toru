@@ -1,5 +1,5 @@
 
-<%= form_for([@group, @group.posts.build]) do |f| %>
+<%= form_for(@post, :url => group_post_path(@post.group)) do |f| %>
     <div class="controls">
       <%= f.text_field :body, :class => 'text_field' %>
     </div>
@@ -7,4 +7,4 @@
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
-    <% end %>
+<% end %>
