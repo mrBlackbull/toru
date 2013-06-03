@@ -1,10 +1,10 @@
-
 <%= form_for([@group, @post]) do |f| %>
-    <div class="controls">
-      <%= f.text_field :body, :class => 'text_field' %>
-    </div>
-  </div>
+	<div style="posts">
+		<%= f.text_area :body, :class => 'text_field' %>
+	</div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+	<div>
+   		<%= f.submit nil, :class => 'btn btn-primary' %>
+	</div>
+
 <% end %>

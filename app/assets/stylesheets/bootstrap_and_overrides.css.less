@@ -1,5 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 @import "twitter/bootstrap/responsive";
+@import "bootswatch/variables.less";
+@import "bootswatch/bootswatch.less";
 @import "public/stylesheets/event_calendar.css";
 
 
@@ -32,10 +34,56 @@
 // Example:
 // @linkColor: #ff0000;
 
-.navbar-inner2 {
-	background-image: none;
-	border-radius: 0;
-	padding: 10px 0;	
+.header {
+    color: white;
+    height: 100px;
+    width: 950px;
+
+    >h3{
+        float: left;
+    }
+
+    >h5{
+        float: right;
+        margin-top: 20px;
+        
+        >a{
+        color: white;
+        }
+
+    }
+}
+
+.span12.home {
+    color: white;
+    text-align: center;
+}
+
+.gradient-wrapper {
+    background-image:url("groups-gradient-bg.png");
+    color: white;
+    padding-bottom: 70px;
+    width: 100%;
+}
+
+ul#group-types {
+    margin-top: 70px
+    margin: 90px auto 0;
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center
+}
+
+.text_field {    
+    height: 70px;
+    width: 65%;
+}
+
+.item_text_field {
+    
+    height: 70px;
+    width: 65%;
 }
 
 .header-wrapper {
@@ -48,6 +96,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 700px;
 }
 
+.control-group.string.optional.event_starts_at.span4{
+    margin-left: 0px;
+}
+
+.control-group.string.optional.event_location.span4{
+    margin-left: 0px;
+}
+
+.dropdown-menu {
+    color: white;
+}
+
+.navbar-fixed-bottom {
+    position: fixed;
+    left: 50%;
+}
+
+.thumbnail {
+    margin: 20px 20px 20px 0px;
+}

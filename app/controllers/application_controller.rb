@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  layout "home"
+  layout "application"
   protect_from_forgery
 
   layout :layout_by_resource
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if devise_controller? && resource_name == :user && action_name == 'edit'
       "application"
     else
-      "home"
+      "devise"
     end
   end
 end

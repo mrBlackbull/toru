@@ -1,0 +1,29 @@
+<div style="margin-top: 30px">
+<%= link_to 'New Item', new_group_item_path, :class => "btn btn-primary", id: "new_link", remote: true %>
+</h3>
+<hr />
+</div>
+
+<h1>Listing items</h1>
+
+      <% @group.items.each do |item| %>
+      <ul class="thumbnails">
+        <li class="span4">
+          <div class="thumbnail">
+           <h3> <%= link_to item.header, item.url, :target => "_blank"  %></h3>
+           <p><%= item.description %></p> <br />
+                     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      group_item_path(@group.id, item.id),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+          </div>
+        </li>
+
+
+
+    <% end %>
+
+</div>
+
+

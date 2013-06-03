@@ -1,19 +1,7 @@
 class GroupsController < ApplicationController
   layout "group" , :except => [:index, :new]
   before_filter :authenticate_user!
-  #Joining group
-  def join
-    @group = Group.find(params[:id])
-    respond_to do |format|
-      if @m.save
-        format.html { redirect_to(@group, :notice => 'You have joined this group.') }
-        format.xml  { head :ok }
-      else
-        format.html { redirect_to(@group, :notice => 'Join error.') }
-        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+ 
   # GET /groups
   # GET /groups.json
   def index

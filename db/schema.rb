@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526100300) do
+ActiveRecord::Schema.define(:version => 20130601180511) do
 
-  create_table "calendars", :force => true do |t|
-    t.date     "date"
-    t.time     "starts_at"
-    t.time     "ends_at"
+  create_table "events", :force => true do |t|
     t.string   "location"
     t.string   "room_number"
     t.text     "info"
     t.integer  "group_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "date"
+    t.string   "starts_at"
+    t.string   "ends_at"
   end
 
-  add_index "calendars", ["group_id"], :name => "index_calendars_on_group_id"
+  add_index "events", ["group_id"], :name => "index_events_on_group_id"
 
   create_table "groups", :force => true do |t|
     t.string   "group_name"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(:version => 20130526100300) do
   end
 
   add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
+
+  create_table "items", :force => true do |t|
+    t.string   "url"
+    t.string   "header"
+    t.text     "description"
+    t.integer  "group_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "items", ["group_id"], :name => "index_items_on_group_id"
 
   create_table "posts", :force => true do |t|
     t.text     "body"

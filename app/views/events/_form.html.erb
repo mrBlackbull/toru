@@ -1,0 +1,22 @@
+<%= simple_form_for([@group, @event], {:class => "form-vertical"}) do |f| %>
+<%= f.error_notification %>
+
+  <div class="form-inputs">
+  <label>Date</label>
+  	<%= f.text_field :date, :class => "datepicker"  %> <br/>
+  	<%= f.input :starts_at, :wrapper_html => { :class => 'span4' }  %>
+  	<%= f.input :ends_at, :wrapper_html => { :class => 'span5' }  %>  <br/>
+  	<%= f.input :location, :wrapper_html => { :class => 'span4' }, :class => 'text_field' %>
+  	<%= f.input :room_number,:wrapper_html => { :class => 'span4' }, :class => 'text_field' %>
+  	<%= f.text_area :info, :wrapper_html => { :class => 'span8' },  :class => 'text_field' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
+
+<script type="text/javascript">
+$('.datepicker').datepicker({format: 'dd-MM-yyyy'});
+</script>

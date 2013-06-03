@@ -1,0 +1,13 @@
+<%= simple_form_for([@group, @item]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= f.input :header, :class => 'text_field' %>
+  	<%= f.input :url, :class => 'text_field' %>
+  	<%= f.text_area :description, :class => 'item_text_field' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h4 style="margin-bottom=0px;"><%= @event.date %></h4> 
+<%= Time.parse(@event.starts_at).strftime("%I:%M %p")  %> -
+<%= Time.parse(@event.ends_at).strftime("%I:%M %p")  %> <br/>
+<%= @event.location  %>,
+<%= @event.room_number  %> <br/>
+<p><%= @event.info  %></p>
+
+
+<%= link_to 'Back', group_events_path %>
+

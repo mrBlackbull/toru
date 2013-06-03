@@ -5,10 +5,10 @@ class HomeController < ApplicationController
 
 	def redirect_if_signed_in
 		if signed_in?(:user)
-		  redirect_to "/groups"
+			redirect_to "/groups"
 		end
 	end
 
-  def index
-  end
+	def index
+	end
 end

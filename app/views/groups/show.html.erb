@@ -1,8 +1,4 @@
-<p> 
-	<h1> Posts should come here! </h1>
-</p>
-
-<div>
+<div style="margin-top: 20px">
 	<%= render "posts/form" %>
 </div>
 	
@@ -15,10 +11,15 @@
 	<% end %>
 </div>
 
-<% content_for :calendar do %>
+<% content_for :events do %>
         <div class="span2 pull-right">
-          <legend> Upcoming Events </legend>
-          <p class="lead" style="border-bottom: 1px solid black"> list of upcoming events from calendar </p><a href="#"> View group calendar </a>
+           Upcoming Events <hr>
+
+           EVENT 1
+           EVENT 2
+           <hr>
+          <%= link_to 'View group calendar', group_events_path(@group) %>
         </div><!--/span-->
 
 <% end %>
+

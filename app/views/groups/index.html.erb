@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:group_name) %></th>
       <th><%= model_class.human_attribute_name(:group_type) %></th>
       <th><%= model_class.human_attribute_name(:affiliation) %></th>
@@ -16,8 +15,7 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= link_to group.id, group_path(group) %></td>
-        <td><%= group.group_name %></td>
+        <td><%= link_to group.group_name, group_path(group) %></td>
         <td><%= group.group_type %></td>
         <td><%= group.affiliation %></td>
         <td><%= distance_of_time_in_words_to_now(group.created_at) %> ago</td>
