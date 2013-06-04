@@ -1,23 +1,38 @@
 <div style="margin-top: 20px">
+	<p class="well" style="width:62%;">Share your thoughts and ideas.</p>
 	<%= render "posts/form" %>
 </div>
 	
 <div id="listing">
 	<% @group.posts.each do |post| %>
 		<div class="list item">
-				<%= post.body %>
-				<%= link_to 'Delete', group_post_path(@group.id, post.id), :confirm => "are you sure?", :method => :delete %>
+				<%= post.body %> <br />
+				<small><%= link_to 'Delete', group_post_path(@group.id, post.id), :confirm => "are you sure?", :method => :delete %>
+				| Posted <%= distance_of_time_in_words_to_now(post.created_at) %> ago
+			</small>
 		</div>
+		<hr />
 	<% end %>
 </div>
 
 <% content_for :events do %>
         <div class="span2 pull-right">
-           Upcoming Events <hr>
+           Upcoming Events <hr />
 
-           EVENT 1
-           EVENT 2
-           <hr>
+			<% @group.events.take(3).each do |event| %>
+
+			          <h5 style="margin-bottom=0px;">
+			            <%= link_to event.date, group_event_path(@group.id, event.id) %> <br />
+			          </h5>
+			 
+			          <%= Time.parse(event.starts_at).strftime("%I:%M %p")  %> -
+			          <%= Time.parse(event.ends_at).strftime("%I:%M %p")  %>
+			          <%= event.location  %>,
+			          <%= event.room_number  %> <br/>
+			 		  <hr />
+
+
+			<% end %>
           <%= link_to 'View group calendar', group_events_path(@group) %>
         </div><!--/span-->
 

@@ -6,21 +6,21 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :text_block_body, :class => 'control-label' %>
+    <%= f.label "Information", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :text_block_body, :class => 'text_field' %>
+      <%= f.text_area :text_block_body, :class => 'text_field' %>
     </div>
   </div>
    
     <div class="control-group">
-    <%= f.label :text_block_content, :class => 'control-label' %>
+    <%= f.label "Topics", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :text_block_content, :class => 'text_field' %>
+      <%= f.text_area :text_block_content, :class => 'text_field' %>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit "Update group info", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 @group, :class => 'btn' %>
   </div>

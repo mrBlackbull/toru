@@ -1,4 +1,6 @@
 Toru::Application.routes.draw do
+
+  match '/help' => 'static#generic'
   get "home/index"
 
   devise_for :users
